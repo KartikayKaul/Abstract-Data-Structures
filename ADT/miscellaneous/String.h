@@ -23,8 +23,8 @@ class String
 	}
 
 	String(long _size) {
-		this->feed.reserve(this->_size);
 		this->_size = _size;
+		this->feed.reserve(this->_size);
 	}
 
 	String(vector<char> feed) {
@@ -34,9 +34,11 @@ class String
 	//operations
 
 	String(const char* str) {
+		long len = strlen(str);
+		feed.reserve(len);
 		for(auto *i=str; *i!='\0'; i++)
 			this->feed.push_back(*i);
-		this->_size = this->feed.size();
+		this->_size = len;
 	}
 
 	String(const String &s) {
@@ -89,9 +91,9 @@ class String
 	String operator*(int times);
 
 	char& operator[](long idx) {
-		if(idx > -1 && idx < this->size())
+		if(idx >= 0 && idx < this->size())
 			return this->feed[idx];
-		else if(idx >= -this->size() && idx < 0 )
+		else if(idx >= -this->size() && idx <= -1 )
 			return this->feed[this->size() + idx];
 		else
 			throw std::invalid_argument("Index value out of range.");
