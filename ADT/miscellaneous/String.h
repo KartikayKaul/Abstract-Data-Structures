@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-#include<cctype>
+#include<cstring>
 
 using namespace std;
 
@@ -124,12 +124,13 @@ String String::cipher(int cipherstep, int stride=1){
 	*/
 
 	String cipher_ = *this;
+	cipherstep = cipherstep % 26;
 	for(long i=0; i<this->size(); i+=stride) {
 		if( (cipher_[i] >= 'A' && cipher_[i] <= 'Z') || ( cipher_[i] >= 'a' && cipher_[i] <= 'z')  ) {
 			if(cipher_[i] >= 'A' && cipher_[i] <= 'Z')
-				cipher_[i] = char(int(cipher_[i] + cipherstep - 65) % 26 + 65);
+				cipher_[i] = char(int(cipher_[i] + cipherstep - 65 + 26) % 26 + 65);   
 			else
-				cipher_[i] = char(int(cipher_[i] + cipherstep - 97) % 26 + 97);	
+				cipher_[i] = char(int(cipher_[i] + cipherstep - 97 + 26) % 26 + 97);	
 		}
 	}
 
@@ -149,12 +150,13 @@ String String::decipher(int cipherstep, int stride=1) {
 	*/
 
 	String decipher_ = *this;
+	cipherstep = cipherstep % 26;
 	for(long i=0; i<this->size(); i+=stride) {
 		if( (decipher_[i] >= 'A' && decipher_[i] <= 'Z') || ( decipher_[i] >= 'a' && decipher_[i] <= 'z')  ) {
 			if(decipher_[i] >= 'A' && decipher_[i] <= 'Z')
-				decipher_[i] = char((int(decipher_[i]) - cipherstep - 65) % 26 + 65);
+				decipher_[i] = char((int(decipher_[i]) - cipherstep - 65 + 26) % 26 + 65);
 			else
-				decipher_[i] = char((int(decipher_[i]) - cipherstep - 97) % 26 + 97);
+				decipher_[i] = char((int(decipher_[i]) - cipherstep - 97 + 26) % 26 + 97);
 		}
 	}
 	return decipher_;
