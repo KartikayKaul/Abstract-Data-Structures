@@ -1,28 +1,85 @@
-# Abstract Data Structures
+## Abstract Data Structures
 
-I am trying to create a repository with Data structures and algorithms from scratch. I am actively working over this library right now. Feel free to help in anyway possible. I am revisiting my Algorithms lessons and doing this helps me revise better. This also helps me practice and stay connected to C++.
+A personal library of Data Structures and Algorithms implemented from scratch in **C++**.  
+It may later be extended to **Python** or **C** for comparative learning.
 
-The entire library is to be written in C++ but if I feel the need I might adjust the repo to include code in Python as well as C languages.
+I am actively working on this project to revisit and practice concepts from *CLRS*, *Coursera*, and other algorithmic resources.
 
-I do not have any plan in regards to it's structure or where to start off. I am currently sticking to learning from CLRS and Coursera and whatever DS or A comes my way I will implement it into the repo after learning of it.
+---
+
+### Navigation
+
+| Section | Description |
+|----------|-------------|
+| [Data Structures](#data-structures) | Core ADT implementations (stack, queue, trees, graph, etc.) |
+| [Miscellaneous](#miscellaneous) | Specialized or utility data structures (e.g., matrix) |
+| [Algorithms](#algorithms) | (Planned) Common algorithms like sorting, searching, and traversal |
+| [Updates](#updates) | Progress logs and change history |
+| [Contribute](#contribute) | How to contribute or suggest improvements |
+
+
+Below is the navigation for different readme files distributed throughout the repository for detailed guidance or notes on corresponding titular folder name.
+| Readme Files |
+|-------------|
+| [Graphs](./ADT/graph/Readme.md)|
+| [Miscellaneous](./ADT/graph/Readme.md)|
+---
 
 ## Data Structures
-There are several standard data structures and many other specific purpose data structures. Whatever may be the category, all of them are present within the `ADT` subfolder.
-In the ADT subfolder, there are three main abstract data structures of `stack`, `queue` and `priority queue`. Then there are different implementations of `tree` data structures that will go into `trees` folder. There is a folder present for `graph` data structures. Some of these folders have their own `Readme``files that you can read for more details on these.
 
-### Miscellaneous
+All core data structures are organized under the [`ADT`](./ADT/) subfolder.
 
-[Jump to `miscellaneous` folder. Click here.](./ADT/miscellaneous/)
+| Category | Description | Link |
+|-----------|--------------|------|
+| Stack | LIFO implementation with templated support | [View Folder](./ADT/stack/) |
+| Queue | FIFO structure and variations | [View Folder](./ADT/queue/) |
+| Priority Queue | Min/Max heap-like structure | [View pqueue.h](./ADT/pqueue.h) |
+| Trees | Binary trees, BSTs, AVL trees, etc. | [View Folder](./ADT/trees/) |
+| Graphs | Undirected and Directed graphs | [View Folder](./ADT/graph/) |
 
-Data structures that serve a specific purpose. For example, I have defined a `matrix` data structure that exhibits the properties and behaviour of a matrix in linear algebra. There are some valid linear algebra operations that can be performed in `matrix` class.
+Each folder may contain its own `README.md` file with details, structure, and usage examples. Navigation for the readme files is provided [above](#navigation).
 
+---
 
+## Miscellaneous
+
+Some data structures serve specific or utility purposes.
+
+- [Matrix Data Structure](./ADT/miscellaneous/matrix.h): Implements linear algebra operations and matrix manipulations.  
+- Additional structures are available in the [`miscellaneous`](./ADT/miscellaneous/) folder.
+
+---
+
+## Algorithms
+
+This section will include algorithms implemented from *CLRS*, *Coursera*, and related resources.
+
+Planned topics include:
+- Sorting and Searching
+- Graph Algorithms (UCS, A*, Dijkstra)
+- Dynamic Programming
+- Recursion and Divide & Conquer
+
+Refer to the [Algorithms folder](./Algorithms/) once populated/created.
+
+---
 
 ## Updates
 
-I will post updates here from this commit onwards.
-* timestamp - 1402240328 - I have turned [pqueue](./ADT/pqueue.h) data structure into a templated one for more general sense. Although in the [uGraph](./ADT/graph/ugraph.h), I have not generalized the graph to templated one yet. It uses integer vector of nodes. I am thinking of accomplishing the generalization task of the uGraph and the other diGraph using a vector of pairs to map an object instance of a node to it's unique non-negative integer index to accomodate into the adjacencyMatrix format that I am using.
+| Timestamp | Description |
+|------------|-------------|
+| 1402240328 | Turned [pqueue](./ADT/pqueue.h) into a templated class for generality. Considering generalizing `uGraph` and `diGraph` next. |
+| 11212022 | Implemented `dequeue()` in `pqueue`. Currently debugging element swapping logic. |
+| 11162022 | Began implementing priority queue data structure for future graph search algorithms such as UCS and A*. |
 
-* timestamp - 11212022 - I have implemented the pqueue dequeue method. I am not sure of its working however. I am checking from left first and then swapping immediately. This looks like a DFS approach. I might implement to look for the smallest element at the entire level and then make the swap.
+---
 
-* timestamp-11162022 - I am currently working on implementing a priority queue DS. The idea is to make it viable to use for our search algorithms such as UCS or A*. I am committing some progress on this DS but one of the functions in the pqueue DS is wrongly implemented and won't give any results
+## Contribute
+
+I am expanding this repository as I continue revisiting data structure and algorithm concepts.  
+Contributions, suggestions, and improvements are always welcome.
+
+- Open issues to suggest new structures or algorithms.  
+- Submit pull requests for code improvements or documentation updates.  
+- Use the discussion section for guidance or collaboration.
+

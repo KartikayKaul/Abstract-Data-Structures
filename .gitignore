@@ -5,3 +5,4 @@ experiments.cpp
 *.trix
 **/*.trix
 **/*/*.trix
+readme.copy.md
