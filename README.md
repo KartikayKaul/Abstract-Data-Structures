@@ -45,7 +45,7 @@ Each folder may contain its own `README.md` file with details, structure, and us
 
 Some data structures serve specific or utility purposes.
 
-- [Matrix Data Structure](./ADT/miscellaneous/matrix.h): Implements linear algebra operations and matrix manipulations.  
+- [Matrix Data Structure](./ADT/miscellaneous/matrix/matrix.h): Implements linear algebra operations and matrix manipulations.  
 - Additional structures are available in the [`miscellaneous`](./ADT/miscellaneous/) folder.
 
 ---
